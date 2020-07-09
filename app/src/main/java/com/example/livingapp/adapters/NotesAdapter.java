@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.livingapp.R;
 import com.example.livingapp.model.Note;
+import com.example.livingapp.utils.NoteUtils;
 
 import java.util.ArrayList;
 
@@ -32,12 +33,20 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
-
+        Note note = getNote(position);
+        if (note != null) {
+            holder.noteText.setText(note.getNoteText());
+            holder.noteDate.setText(NoteUtils.dateFromLong(note.getNoteDate()));
+        }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return notes.size();
+    }
+
+    private Note getNote(int position) {
+        return notes.get(position);
     }
 
     class NoteHolder extends RecyclerView.ViewHolder {
