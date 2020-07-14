@@ -28,7 +28,6 @@
             android:layout_marginBottom="3dp"
             android:textSize="10sp"
             android:maxLines="3"
-            android:text="입력하세요.."
             />
         <TextView
             android:id="@+id/note_date"
@@ -37,7 +36,6 @@
             android:layout_marginBottom="5dp"
             android:layout_marginStart="12dp"
             android:textSize="12sp"
-            android:text="04/07/2020"
             />
         <view
             android:layout_width="match_parent"
