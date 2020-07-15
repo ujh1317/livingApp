@@ -61,7 +61,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onAddNewNote() {
-
+        if (notes != null)
+            notes.add(new Note("this is new note ", new Date().getTime()));
+        if (adapter != null)
+            adapter.notifyDataSetChanged();
     }
 
     @Override
