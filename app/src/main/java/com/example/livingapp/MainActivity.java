@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
         adapter = new NotesAdapter(this, notes);
         recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
 
     }
 
