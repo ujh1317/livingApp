@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             notes.add(new Note(" 입력하세요. ",
                     new Date().getTime()));
         }
-        adapter = new NotesAdapter(notes);
+        adapter = new NotesAdapter(this, notes);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 

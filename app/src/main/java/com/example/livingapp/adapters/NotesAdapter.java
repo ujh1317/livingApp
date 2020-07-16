@@ -1,5 +1,6 @@
 package com.example.livingapp.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,11 @@ import java.util.ArrayList;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> {
 
+    private Context context;
     private ArrayList<Note> notes;
 
-    public NotesAdapter(ArrayList<Note> notes) {
+    public NotesAdapter(Context context, ArrayList<Note> notes) {
+        this.context = context;
         this.notes = notes;
     }
 
@@ -26,7 +29,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_layout, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.note_layout, parent, false);
 
         return new NoteHolder(v);
     }
@@ -55,6 +58,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
 
         public NoteHolder(@NonNull View itemView) {
             super(itemView);
+            noteDate = itemView.findViewById(R.id.note_date);
+            noteText = itemView.findViewById(R.id.note_text);
         }
     }
 }
